@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log in – Awaaz Map</title>
+<meta name="description" content="Report and track problems in your neighbourhood on a public map.">
+<meta name="theme-color" content="#0e5b3f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e5b3f'/%3E%3Ccircle cx='16' cy='14' r='6' fill='%23f4b400'/%3E%3Cpath d='M16 28l-6-9h12z' fill='%23f4b400'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+<a class="sr-only" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page"><div class="wrap"><div class="auth-card">
+<div class="sign-panel pad">
+<h1 style="font-size:2.4rem">Welcome to Awaaz Map</h1>
+<p>Log in to report problems and back other people's reports.</p>
+<div class="tabs" role="tablist"><button type="button" role="tab" data-mode="login" aria-selected="true">Log in</button><button type="button" role="tab" data-mode="signup" aria-selected="false">Create account</button></div>
+<div id="msg" class="alert alert-error" hidden role="alert"></div>
+<form id="auth-form" novalidate>
+  <div class="field" id="name-field" hidden><label for="name">Your name</label><input type="text" id="name" name="name" autocomplete="name" maxlength="60"></div>
+  <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email"></div>
+  <div class="field"><label for="password">Password</label><input type="password" id="password" name="password" autocomplete="current-password"></div>
+  <button class="btn btn-primary" id="submit" style="width:100%">Log in</button>
+  <p style="margin:12px 0 0;text-align:center"><a href="#" id="forgot">Forgot your password?</a></p>
+</form>
+<div class="divider">or</div>
+<button type="button" class="btn btn-light" id="google" style="width:100%">Continue with Google</button>
+</div></div></div></main>
+<footer id="site-footer"></footer>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/common.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

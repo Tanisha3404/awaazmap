@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Awaaz Map – report and track problems in your area</title>
+<meta name="description" content="Report and track problems in your neighbourhood on a public map.">
+<meta name="theme-color" content="#0e5b3f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e5b3f'/%3E%3Ccircle cx='16' cy='14' r='6' fill='%23f4b400'/%3E%3Cpath d='M16 28l-6-9h12z' fill='%23f4b400'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/leaflet.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+<a class="sr-only" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<div class="ticker" id="ticker" aria-live="polite">Loading the map…</div>
+<main id="main">
+<div class="home" id="home" data-view="map">
+  <section class="panel" aria-label="Reports list">
+    <div class="filters">
+      <div class="chips" id="chips" role="group" aria-label="Filter by kind of problem"></div>
+      <input type="search" id="f-q" placeholder="Search reports by title or street" aria-label="Search reports">
+      <div class="filter-row">
+        <select id="f-status" aria-label="Filter by status"></select>
+        <select id="f-sort" aria-label="Sort reports"><option value="newest">Newest first</option><option value="top">Most backed</option><option value="oldest">Oldest first</option></select>
+      </div>
+    </div>
+    <div class="list-count" id="count" aria-live="polite">Loading…</div>
+    <div class="list" id="list"></div>
+  </section>
+  <section class="map-col" aria-label="Map of reports">
+    <div id="map"></div>
+    <div class="map-search place-search" id="place-search" role="search" aria-label="Go to a place"><input type="search" placeholder="Go to a place, e.g. Navrachana University" aria-label="Place name"><button class="btn btn-green btn-small" type="button">Go</button><ul class="place-results" hidden></ul></div>
+    <button class="btn btn-green map-fab" id="locate">Find my location</button>
+  </section>
+</div>
+<div class="mobile-toggle" role="group" aria-label="Switch view">
+  <button class="btn btn-ghost" data-view="map" aria-pressed="true">Map</button>
+  <button class="btn btn-ghost" data-view="list" aria-pressed="false">List</button>
+</div>
+</main>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="vendor/leaflet.js"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/common.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

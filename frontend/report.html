@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report a problem – Awaaz Map</title>
+<meta name="description" content="Report and track problems in your neighbourhood on a public map.">
+<meta name="theme-color" content="#0e5b3f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e5b3f'/%3E%3Ccircle cx='16' cy='14' r='6' fill='%23f4b400'/%3E%3Cpath d='M16 28l-6-9h12z' fill='%23f4b400'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/leaflet.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="report">
+<a class="sr-only" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page"><div class="wrap narrow">
+<h1>Report a problem</h1>
+<p class="muted" style="max-width:60ch">It takes about two minutes. Your report goes on the public map with your name, so neighbours can back it up.</p>
+<ol class="steps" aria-label="Progress"><li aria-current="step">Where</li><li>What</li><li>Photos</li></ol>
+<form id="report-form" class="report-grid" novalidate>
+  <div data-step>
+    <h2>Where is it?</h2>
+    <div class="place-search pick-search" id="place-search" role="search" aria-label="Find a place"><input type="search" placeholder="Search for a street, area or landmark" aria-label="Place name"><button class="btn btn-green" type="button">Search</button><ul class="place-results" hidden></ul></div>
+    <div class="toolbar"><button type="button" class="btn btn-green" id="here">Use my current location</button><span class="muted">or tap the map to drop a pin</span></div>
+    <div class="pick-map" id="pick-map" role="application" aria-label="Map. Tap to place the pin."></div>
+    <p class="hint" id="loc-hint">No pin yet.</p><div class="error-text" id="e-loc"></div>
+    <div id="nearby" class="nearby" hidden></div>
+    <div class="field" style="margin-top:18px"><label for="address">Street or landmark <span class="muted" style="font-weight:400">(optional)</span></label><input type="text" id="address" name="address" maxlength="200" placeholder="Near the bus stop on College Road"></div>
+    <div class="form-nav"><span></span><button type="button" class="btn btn-primary" data-next>Next: describe it</button></div>
+  </div>
+  <div data-step hidden>
+    <h2>What is the problem?</h2>
+    <div class="field"><label id="cat-l">Kind of problem</label><div class="cats" id="cats" role="radiogroup" aria-labelledby="cat-l"></div><div class="error-text" id="e-cat"></div></div>
+    <div class="field"><label for="title">Short title</label><input type="text" id="title" name="title" maxlength="120" placeholder="Deep pothole outside the school gate"><div class="hint"><span id="c-title">0/120</span></div><div class="error-text" id="e-title"></div></div>
+    <div class="field"><label for="description">Details</label><textarea id="description" name="description" maxlength="1500" placeholder="How long has it been like this? Who does it affect? Is it dangerous?"></textarea><div class="hint"><span id="c-desc">0/1500</span></div><div class="error-text" id="e-desc"></div></div>
+    <div class="form-nav"><button type="button" class="btn btn-ghost" data-back>Back</button><button type="button" class="btn btn-primary" data-next>Next: add photos</button></div>
+  </div>
+  <div data-step hidden>
+    <h2>Add photos and send</h2>
+    <div class="field"><label for="photos">Photos <span class="muted" style="font-weight:400">(optional, up to 3)</span></label><input type="file" id="photos" accept="image/jpeg,image/png,image/webp" multiple><div class="hint">A clear photo helps the ward office act faster. JPG, PNG or WebP.</div><div class="error-text" id="e-photos"></div><div class="thumbs" id="thumbs"></div></div>
+    <div class="review" id="review"></div>
+    <div class="alert alert-error" id="e-send" hidden style="margin-top:16px"></div>
+    <div class="form-nav"><button type="button" class="btn btn-ghost" data-back>Back</button><button type="submit" class="btn btn-primary" id="send">Submit report</button></div>
+  </div>
+</form>
+</div></main>
+<footer id="site-footer"></footer>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="vendor/leaflet.js"></script>
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/common.js"></script>
+<script src="js/report.js"></script>
+</body>
+</html>

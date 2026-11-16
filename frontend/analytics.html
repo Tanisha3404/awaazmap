@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Numbers – Awaaz Map</title>
+<meta name="description" content="Report and track problems in your neighbourhood on a public map.">
+<meta name="theme-color" content="#0e5b3f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e5b3f'/%3E%3Ccircle cx='16' cy='14' r='6' fill='%23f4b400'/%3E%3Cpath d='M16 28l-6-9h12z' fill='%23f4b400'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="analytics">
+<a class="sr-only" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page"><div class="wrap"><h1>Numbers</h1><p class="muted" style="max-width:60ch">How many problems people report, and how long the city takes to fix them. Everything here is public.</p>
+<div class="tiles" id="tiles"></div>
+<div class="charts" id="charts">
+ <section class="chart-card"><h3>Reports per month</h3><div class="chart-box"><canvas id="c-month" role="img" aria-label="Bar chart of reports per month"></canvas></div><details class="tbl" id="t-month"></details></section>
+ <section class="chart-card"><h3>Where reports stand</h3><div class="chart-box"><canvas id="c-status" role="img" aria-label="Bar chart of reports by status"></canvas></div><details class="tbl" id="t-status"></details></section>
+ <section class="chart-card"><h3>What people report</h3><div class="chart-box"><canvas id="c-cat" role="img" aria-label="Bar chart of reports by category"></canvas></div><details class="tbl" id="t-cat"></details></section>
+ <section class="chart-card"><h3>How fast each kind gets fixed</h3><div class="chart-box"><canvas id="c-days" role="img" aria-label="Bar chart of average days to fix by category"></canvas></div><details class="tbl" id="t-days"></details></section>
+</div></div></main>
+<footer id="site-footer"></footer>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="vendor/chart.umd.js"></script>
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/common.js"></script>
+<script src="js/analytics.js"></script>
+</body>
+</html>
